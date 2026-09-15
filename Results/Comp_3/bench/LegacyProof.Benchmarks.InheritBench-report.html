@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>LegacyProof.Benchmarks.InheritBench-20260915-154452</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 10 (10.0.20348.5139)
+Intel Xeon W-2255 CPU 3.70GHz, 1 CPU, 20 logical and 10 physical cores
+.NET SDK 11.0.100-preview.6.26359.118
+  [Host] : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net10  : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net8   : .NET 8.0.11 (8.0.11, 8.0.1124.51707), X64 RyuJIT x86-64-v4
+  net9   : .NET 9.0.4 (9.0.4, 9.0.425.16305), X64 RyuJIT x86-64-v4
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>Job</th><th>Toolchain</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Ratio</th><th>RatioSD</th><th>Code Size</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>NextPlain</td><td>net10</td><td>net10</td><td>2.318 ns</td><td>0.0763 ns</td><td>0.1642 ns</td><td>2.235 ns</td><td>1.00</td><td>0.10</td><td>170 B</td><td>-</td><td>NA</td>
+</tr><tr><td>NextHeir</td><td>net10</td><td>net10</td><td>3.138 ns</td><td>0.0861 ns</td><td>0.1057 ns</td><td>3.091 ns</td><td>1.36</td><td>0.10</td><td>520 B</td><td>-</td><td>NA</td>
+</tr><tr><td>DoublePlain</td><td>net10</td><td>net10</td><td>2.020 ns</td><td>0.0711 ns</td><td>0.1042 ns</td><td>1.987 ns</td><td>0.88</td><td>0.07</td><td>177 B</td><td>-</td><td>NA</td>
+</tr><tr><td>DoubleHeir</td><td>net10</td><td>net10</td><td>4.940 ns</td><td>0.0636 ns</td><td>0.0531 ns</td><td>4.952 ns</td><td>2.14</td><td>0.14</td><td>627 B</td><td>-</td><td>NA</td>
+</tr><tr><td>BytesPlain</td><td>net10</td><td>net10</td><td>50.093 ns</td><td>0.9957 ns</td><td>1.2228 ns</td><td>50.301 ns</td><td>21.71</td><td>1.51</td><td>349 B</td><td>-</td><td>NA</td>
+</tr><tr><td>BytesHeir</td><td>net10</td><td>net10</td><td>648.626 ns</td><td>11.8831 ns</td><td>10.5340 ns</td><td>645.347 ns</td><td>281.10</td><td>18.90</td><td>583 B</td><td>-</td><td>NA</td>
+</tr><tr><td>NextPlain</td><td>net8</td><td>net8</td><td>2.225 ns</td><td>0.0664 ns</td><td>0.0622 ns</td><td>2.205 ns</td><td>0.96</td><td>0.07</td><td>170 B</td><td>-</td><td>NA</td>
+</tr><tr><td>NextHeir</td><td>net8</td><td>net8</td><td>3.550 ns</td><td>0.1004 ns</td><td>0.2732 ns</td><td>3.544 ns</td><td>1.54</td><td>0.15</td><td>517 B</td><td>-</td><td>NA</td>
+</tr><tr><td>DoublePlain</td><td>net8</td><td>net8</td><td>2.206 ns</td><td>0.0199 ns</td><td>0.0155 ns</td><td>2.202 ns</td><td>0.96</td><td>0.06</td><td>179 B</td><td>-</td><td>NA</td>
+</tr><tr><td>DoubleHeir</td><td>net8</td><td>net8</td><td>5.034 ns</td><td>0.1275 ns</td><td>0.1657 ns</td><td>5.036 ns</td><td>2.18</td><td>0.16</td><td>630 B</td><td>-</td><td>NA</td>
+</tr><tr><td>BytesPlain</td><td>net8</td><td>net8</td><td>35.458 ns</td><td>0.2022 ns</td><td>0.1689 ns</td><td>35.489 ns</td><td>15.37</td><td>1.01</td><td>365 B</td><td>-</td><td>NA</td>
+</tr><tr><td>BytesHeir</td><td>net8</td><td>net8</td><td>628.598 ns</td><td>3.0731 ns</td><td>2.3992 ns</td><td>628.149 ns</td><td>272.42</td><td>17.84</td><td>585 B</td><td>-</td><td>NA</td>
+</tr><tr><td>NextPlain</td><td>net9</td><td>net9</td><td>2.546 ns</td><td>0.0852 ns</td><td>0.2514 ns</td><td>2.525 ns</td><td>1.10</td><td>0.13</td><td>170 B</td><td>-</td><td>NA</td>
+</tr><tr><td>NextHeir</td><td>net9</td><td>net9</td><td>3.417 ns</td><td>0.0344 ns</td><td>0.0305 ns</td><td>3.406 ns</td><td>1.48</td><td>0.10</td><td>511 B</td><td>-</td><td>NA</td>
+</tr><tr><td>DoublePlain</td><td>net9</td><td>net9</td><td>2.151 ns</td><td>0.0088 ns</td><td>0.0078 ns</td><td>2.148 ns</td><td>0.93</td><td>0.06</td><td>173 B</td><td>-</td><td>NA</td>
+</tr><tr><td>DoubleHeir</td><td>net9</td><td>net9</td><td>4.861 ns</td><td>0.0259 ns</td><td>0.0202 ns</td><td>4.858 ns</td><td>2.11</td><td>0.14</td><td>618 B</td><td>-</td><td>NA</td>
+</tr><tr><td>BytesPlain</td><td>net9</td><td>net9</td><td>48.851 ns</td><td>0.8130 ns</td><td>0.7207 ns</td><td>48.603 ns</td><td>21.17</td><td>1.42</td><td>346 B</td><td>-</td><td>NA</td>
+</tr><tr><td>BytesHeir</td><td>net9</td><td>net9</td><td>612.018 ns</td><td>1.6378 ns</td><td>1.3676 ns</td><td>611.501 ns</td><td>265.23</td><td>17.35</td><td>574 B</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

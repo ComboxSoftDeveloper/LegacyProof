@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>LegacyProof.Benchmarks.MatrixBench-20260915-155653</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 10 (10.0.20348.5386)
+Intel Xeon Silver 4314 CPU 2.40GHz, 2 CPU, 64 logical and 32 physical cores
+.NET SDK 11.0.100-preview.5.26302.115
+  [Host] : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net10  : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net8   : .NET 8.0.16 (8.0.16, 8.0.1625.21506), X64 RyuJIT x86-64-v4
+  net9   : .NET 9.0.5 (9.0.5, 9.0.525.21509), X64 RyuJIT x86-64-v4
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>Job</th><th>Toolchain</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Code Size</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>Multiply4x4</td><td>net10</td><td>net10</td><td>11.601 ns</td><td>0.2161 ns</td><td>0.1804 ns</td><td>1.00</td><td>0.02</td><td>421 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Add4x4</td><td>net10</td><td>net10</td><td>10.795 ns</td><td>0.1970 ns</td><td>0.1843 ns</td><td>0.93</td><td>0.02</td><td>174 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Multiply3x2</td><td>net10</td><td>net10</td><td>6.101 ns</td><td>0.1412 ns</td><td>0.1102 ns</td><td>0.53</td><td>0.01</td><td>306 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Multiply4x4</td><td>net8</td><td>net8</td><td>17.016 ns</td><td>0.1657 ns</td><td>0.1469 ns</td><td>1.47</td><td>0.03</td><td>491 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Add4x4</td><td>net8</td><td>net8</td><td>8.944 ns</td><td>0.0734 ns</td><td>0.0650 ns</td><td>0.77</td><td>0.01</td><td>191 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Multiply3x2</td><td>net8</td><td>net8</td><td>6.502 ns</td><td>0.0653 ns</td><td>0.0545 ns</td><td>0.56</td><td>0.01</td><td>354 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Multiply4x4</td><td>net9</td><td>net9</td><td>10.812 ns</td><td>0.0595 ns</td><td>0.0557 ns</td><td>0.93</td><td>0.01</td><td>421 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Add4x4</td><td>net9</td><td>net9</td><td>9.176 ns</td><td>0.0476 ns</td><td>0.0445 ns</td><td>0.79</td><td>0.01</td><td>174 B</td><td>-</td><td>NA</td>
+</tr><tr><td>Multiply3x2</td><td>net9</td><td>net9</td><td>5.694 ns</td><td>0.0991 ns</td><td>0.0827 ns</td><td>0.49</td><td>0.01</td><td>307 B</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

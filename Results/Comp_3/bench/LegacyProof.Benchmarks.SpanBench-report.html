@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>LegacyProof.Benchmarks.SpanBench-20260915-155435</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.15.8, Windows 10 (10.0.20348.5139)
+Intel Xeon W-2255 CPU 3.70GHz, 1 CPU, 20 logical and 10 physical cores
+.NET SDK 11.0.100-preview.6.26359.118
+  [Host] : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net10  : .NET 10.0.1 (10.0.1, 10.0.125.57005), X64 RyuJIT x86-64-v4
+  net8   : .NET 8.0.11 (8.0.11, 8.0.1124.51707), X64 RyuJIT x86-64-v4
+  net9   : .NET 9.0.4 (9.0.4, 9.0.425.16305), X64 RyuJIT x86-64-v4
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>Job</th><th>Toolchain</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Code Size</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>OverNumbers</td><td>net10</td><td>net10</td><td>0.4684 ns</td><td>0.0127 ns</td><td>0.0106 ns</td><td>1.00</td><td>0.03</td><td>23 B</td><td>-</td><td>NA</td>
+</tr><tr><td>OverStrings</td><td>net10</td><td>net10</td><td>0.4671 ns</td><td>0.0036 ns</td><td>0.0028 ns</td><td>1.00</td><td>0.02</td><td>23 B</td><td>-</td><td>NA</td>
+</tr><tr><td>OverNumbers</td><td>net8</td><td>net8</td><td>0.4714 ns</td><td>0.0085 ns</td><td>0.0075 ns</td><td>1.01</td><td>0.03</td><td>23 B</td><td>-</td><td>NA</td>
+</tr><tr><td>OverStrings</td><td>net8</td><td>net8</td><td>0.4777 ns</td><td>0.0158 ns</td><td>0.0132 ns</td><td>1.02</td><td>0.03</td><td>23 B</td><td>-</td><td>NA</td>
+</tr><tr><td>OverNumbers</td><td>net9</td><td>net9</td><td>0.4761 ns</td><td>0.0394 ns</td><td>0.0387 ns</td><td>1.02</td><td>0.08</td><td>23 B</td><td>-</td><td>NA</td>
+</tr><tr><td>OverStrings</td><td>net9</td><td>net9</td><td>0.4773 ns</td><td>0.0376 ns</td><td>0.0462 ns</td><td>1.02</td><td>0.10</td><td>23 B</td><td>-</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

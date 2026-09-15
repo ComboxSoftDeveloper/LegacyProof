@@ -1,0 +1,18 @@
+Рантайм: 9.0.18
+
+Массив строк присваивается в массив объектов:
+
+  string[] strings = new string[4];
+  object[] objects = strings;      // компилятор не против
+
+  objects.GetType()              String[]
+  ReferenceEquals(strings, objects)  True
+
+  objects[0] = "строка"           прошло
+  objects[0] = 42                 ArrayTypeMismatchException
+  new Span<object>(objects)       ArrayTypeMismatchException
+  new Span<string>(strings)       прошло
+
+Запись числа в массив строк не проходит: проверка идёт
+при каждой записи. Span проверяет тип один раз, при создании,
+и дальше работает без проверок.

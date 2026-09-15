@@ -1,0 +1,22 @@
+Рантайм: 10.0.1
+
+Наследник объявлен так и больше в нём ничего нет:
+
+  internal sealed class EmptyRandom : Random
+  {
+  }
+
+  как создан                     реализация
+
+  new Random()                    XoshiroImpl
+  new EmptyRandom()               CompatDerivedImpl
+  new Random(42)                  CompatSeedImpl
+  new SeededRandom(42)            CompatDerivedImpl
+
+Первые 5 чисел с начальным значением 42:
+
+  Random               668   140   125   522   168
+  SeededRandom         668   140   125   522   168
+
+Числа совпадают: обе реализации считают одинаково.
+Отличается только скорость и путь вызова.
